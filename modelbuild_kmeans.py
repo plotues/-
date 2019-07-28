@@ -15,9 +15,9 @@ start = time.clock()
 
 
 class Hog_kmeans():
-        def __init__(self, cell_height, cell_width,  bin_size, filenames):
-                self.cell_height = cell_height
-                self.cell_width = cell_width
+        def __init__(self, height, width,  bin_size, filenames):
+                self.cell_height = height
+                self.cell_width = width
                 self.bin_size = bin_size
                 self.path = filenames
 
@@ -35,8 +35,8 @@ class Hog_kmeans():
         def hog_precessing(self, img):
                 #得到图片的HOG特征值
                 height_init, width_init = np.shape(img)
-                height = int(height_init/self.cell_height)
-                width = int(width_init/self.cell_width)
+                height = height
+                width = width
                 features = ft.hog(
                         img,
                         orientations=self.bin_size,
